@@ -40,3 +40,4 @@ and execute:=> `npx sequelize init`
 -Airport{id, name, city_name, address}
 -city - {id, name}
 
+npx sequelize db:migrate
