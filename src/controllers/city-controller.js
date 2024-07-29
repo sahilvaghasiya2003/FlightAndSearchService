@@ -33,7 +33,7 @@ const destroy = async (req, res) => {
     return res.status(201).json({
       data: city,
       success: true,
-      message: "Successfully Created City",
+      message: "Successfully Delete City",
       error: {},
     });
   } catch (error) {
@@ -53,7 +53,7 @@ const update = async (req, res) => {
     return res.status(201).json({
       data: city,
       success: true,
-      message: "Successfully Created City",
+      message: "Successfully Update City",
       error: {},
     });
   } catch (error) {
@@ -73,7 +73,7 @@ const get = async (req, res) => {
     return res.status(201).json({
       data: city,
       success: true,
-      message: "Successfully Created City",
+      message: "Successfully Get City",
       error: {},
     });
   } catch (error) {
