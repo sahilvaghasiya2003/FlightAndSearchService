@@ -47,3 +47,6 @@ npx sequelize db:migrate
 -city -> {id, name, created_at,update_at}
 -Airport -> {id, name, address, city_id, created_at, update_at}
         Rlationship -> City has many airports and Airport belong to a city(one to Many)
+
+        
+--npx sequelize model:generate --name Airport --attributes name:String,address:String,cityId:integer
