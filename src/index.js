@@ -18,10 +18,7 @@ const setupAndStartServer = async () => {
     if (process.env.SYNC_DB) {
       db.sequelize.sync({ alter: true });
     }
-    await Airplan.create({
-      modelNumber:"Bonbardier CRJ",
-
-    })
+    
     // const repo = new CityRepository;
     // repo.creatCity({name: "Surat"});
     // repo.deleteCity(8);    //here 8 is id of ahmedabad
