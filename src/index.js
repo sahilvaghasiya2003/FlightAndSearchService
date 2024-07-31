@@ -3,6 +3,8 @@ const bodyParser = require("body-parser");
 const { PORT } = require("./config/serverConfig");
 const ApiRoutes = require("./Routes/index");
 const db = require("./models/index");
+const {Airplan} = require('./models/index')
+
 // const CityRepository = require('./repository/city-repository')
 
 const setupAndStartServer = async () => {
@@ -11,11 +13,15 @@ const setupAndStartServer = async () => {
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use("/api", ApiRoutes);       
 
-  app.listen(PORT || process.env.PORT, () => {
+  app.listen(PORT || process.env.PORT, async() => {
     console.log(`server sarted at ${PORT}`);
     if (process.env.SYNC_DB) {
       db.sequelize.sync({ alter: true });
     }
+    await Airplan.create({
+      modelNumber:"Bonbardier CRJ",
+
+    })
     // const repo = new CityRepository;
     // repo.creatCity({name: "Surat"});
     // repo.deleteCity(8);    //here 8 is id of ahmedabad
