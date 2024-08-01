@@ -1,3 +1,5 @@
+const {ClientErrors,ServiceErrors,SuccessCodes} = require('../utils/error-codes')
+
 const validateCreateFlight = (req, res, next) => {
   if (
     !req.body.flightNumber ||
@@ -8,7 +10,7 @@ const validateCreateFlight = (req, res, next) => {
     !req.body.departureTime ||
     !req.body.price
   ) {
-    return res.status(400).json({
+    return res.status(ClientErrors.BAD_REQUEST).json({
       data: {},
       success: false,
       message: "Invald request body for create flight",
@@ -18,8 +20,24 @@ const validateCreateFlight = (req, res, next) => {
   next();
 };
 
+// const validateUpdateFlight = (req,res,next)=>{
+//     if (
+//         req.body.flightNumber ||
+//         req.body.airplaneId 
+//       ) {
+//         return res.status(400).json({
+//           data: {},
+//           success: false,
+//           message: "Invald request body for update flight",
+//           err: "you can't change the flight number and ID.",
+//         });
+//       }
+//       next();
+// }
+
 module.exports = {
     validateCreateFlight,
+    // validateUpdateFlight
 }
 
 /**
@@ -27,7 +45,7 @@ module.exports = {
  * airplaneId
  * departureAirportId
  * arrivalAirportId
- * arrivalTime
+ * arrivalTimed
  * departureTime
  * price
  * totalSeats
