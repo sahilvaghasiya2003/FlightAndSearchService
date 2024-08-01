@@ -9,6 +9,7 @@ class CrudRepository {
       return result;
     } catch (error) {
       console.log("somthind went wrong at crud repository");
+      throw { error };
     }
   }
   async delete(modelId) {
@@ -21,6 +22,7 @@ class CrudRepository {
       return result;
     } catch (error) {
       console.log("somthind went wrong at crud repository");
+      throw { error };
     }
   }
   async get(modelId) {
@@ -29,6 +31,7 @@ class CrudRepository {
       return result;
     } catch (error) {
       console.log("somthind went wrong at crud repository");
+      throw { error };
     }
   }
   async getAll() {
@@ -37,6 +40,7 @@ class CrudRepository {
       return result;
     } catch (error) {
       console.log("somthind went wrong at crud repository");
+      throw { error };
     }
   }
   async update(modelId, data) {
@@ -49,9 +53,9 @@ class CrudRepository {
       return result;
     } catch (error) {
       console.log("somthind went wrong at crud repository");
+      throw { error };
     }
   }
 }
-
 
 module.exports = CrudRepository;
