@@ -7,7 +7,7 @@ const ClientErrors = Object.freeze(
     }
 )
 
-const ServiceErrors = Object.freeze({
+const ServerError = Object.freeze({
     INTERNAL_SERVER_ERROR:500,
     NOT_IMPLEMENTED:501,
 
@@ -18,4 +18,4 @@ const SuccessCodes = Object.freeze({
     CREATED:201
 })
 
-module.exports = {ClientErrors,ServiceErrors,SuccessCodes}
+module.exports = {ClientErrors,ServerError,SuccessCodes}
